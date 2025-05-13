@@ -1,0 +1,95 @@
+---
+---
+
+<section class="relative h-screen flex items-center">
+  <!-- Background image with overlay -->
+  <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+    <div class="absolute inset-0 bg-gradient-to-r from-neutral-900/70 to-neutral-900/50"></div>
+  </div>
+  
+  <div class="container mx-auto px-4 md:px-6 relative z-10">
+    <div class="max-w-3xl" data-aos="fade-up" data-aos-delay="200">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+        Find Your <span class="text-secondary-400">Perfect</span> Home
+      </h1>
+      <p class="text-lg text-neutral-200 mb-8 max-w-xl">
+        Discover premium properties in the most desirable locations. Let us guide you through the journey of finding your dream home.
+      </p>
+      
+      <!-- Property search form -->
+      <div class="bg-white p-6 rounded-lg shadow-lg max-w-2xl">
+        <form id="search-form" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="col-span-full md:col-span-1">
+            <label for="location" class="block text-sm font-medium text-neutral-700 mb-1">Location</label>
+            <select id="location" name="location" class="w-full p-3 border border-neutral-300 rounded-md">
+              <option value="">Any Location</option>
+              <option value="downtown">Downtown</option>
+              <option value="suburban">Suburban Area</option>
+              <option value="beachfront">Beachfront</option>
+              <option value="countryside">Countryside</option>
+            </select>
+          </div>
+          
+          <div class="col-span-full md:col-span-1">
+            <label for="property-type" class="block text-sm font-medium text-neutral-700 mb-1">Property Type</label>
+            <select id="property-type" name="property-type" class="w-full p-3 border border-neutral-300 rounded-md">
+              <option value="">Any Type</option>
+              <option value="apartment">Apartment</option>
+              <option value="house">House</option>
+              <option value="condo">Condo</option>
+              <option value="villa">Villa</option>
+            </select>
+          </div>
+          
+          <div class="col-span-full md:col-span-1">
+            <label for="budget" class="block text-sm font-medium text-neutral-700 mb-1">Max Price</label>
+            <select id="budget" name="budget" class="w-full p-3 border border-neutral-300 rounded-md">
+              <option value="">Any Price</option>
+              <option value="500000">$500,000</option>
+              <option value="1000000">$1,000,000</option>
+              <option value="2000000">$2,000,000</option>
+              <option value="5000000">$5,000,000+</option>
+            </select>
+          </div>
+          
+          <div class="col-span-full">
+            <button type="submit" class="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 px-6 rounded-md font-medium transition-colors">
+              Search Properties
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <!-- Scroll Down Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white animate-bounce">
+      <span class="text-sm mb-2">Scroll Down</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+      </svg>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchForm = document.getElementById('search-form');
+    
+    searchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const location = document.getElementById('location').value;
+      const propertyType = document.getElementById('property-type').value;
+      const budget = document.getElementById('budget').value;
+      
+      // Build the query string
+      const params = new URLSearchParams();
+      if (location) params.append('location', location);
+      if (propertyType) params.append('type', propertyType);
+      if (budget) params.append('maxPrice', budget);
+      
+      // Redirect to the properties page with the search parameters
+      window.location.href = `/properties?${params.toString()}`;
+    });
+  });
+</script>

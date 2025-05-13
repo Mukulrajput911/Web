@@ -1,0 +1,65 @@
+---
+import PropertyCard from '../property/PropertyCard.astro';
+import { featuredProperties } from '../../data/properties';
+---
+
+<section class="py-20 bg-neutral-50">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Properties</h2>
+      <p class="text-neutral-600">Explore our handpicked selection of premium properties currently on the market</p>
+    </div>
+    
+    <div class="swiper-container" id="featured-properties-slider">
+      <div class="swiper-wrapper">
+        {featuredProperties.map((property, index) => (
+          <div class="swiper-slide p-3" data-aos="fade-up" data-aos-delay={100 * (index % 3)}>
+            <PropertyCard property={property} />
+          </div>
+        ))}
+      </div>
+      
+      <div class="swiper-pagination mt-8"></div>
+      
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+    
+    <div class="mt-12 text-center" data-aos="fade-up">
+      <a href="/properties" class="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-colors">
+        View All Properties
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  import Swiper from 'swiper/bundle';
+  import 'swiper/css/bundle';
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    new Swiper('#featured-properties-slider', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      },
+    });
+  });
+</script>

@@ -1,0 +1,326 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const team = [
+  {
+    name: "David Chen",
+    position: "Founder & CEO",
+    image: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    bio: "With over 20 years of experience in luxury real estate, David founded LuxeEstates with a vision to redefine the real estate experience through personalized service and market expertise."
+  },
+  {
+    name: "Sophia Williams",
+    position: "Senior Luxury Property Specialist",
+    image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    bio: "Sophia specializes in high-end residential properties and has consistently ranked among the top 1% of real estate agents nationally."
+  },
+  {
+    name: "Marcus Johnson",
+    position: "Commercial Real Estate Director",
+    image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    bio: "Marcus leads our commercial division with expertise in office spaces, retail locations, and investment properties throughout major metropolitan areas."
+  },
+  {
+    name: "Olivia Rodriguez",
+    position: "Marketing Director",
+    image: "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    bio: "Olivia brings innovative marketing strategies to showcase our properties, combining traditional techniques with cutting-edge digital approaches."
+  }
+];
+
+const values = [
+  {
+    title: "Excellence",
+    description: "We are committed to delivering exceptional service that exceeds expectations in every interaction.",
+    icon: "star"
+  },
+  {
+    title: "Integrity",
+    description: "We conduct our business with honesty, transparency, and ethical practices that build lasting trust.",
+    icon: "shield"
+  },
+  {
+    title: "Expertise",
+    description: "Our team brings in-depth knowledge and continuous learning to provide informed guidance.",
+    icon: "academic-cap"
+  },
+  {
+    title: "Client-Focused",
+    description: "We prioritize understanding each client's unique needs to deliver personalized solutions.",
+    icon: "heart"
+  }
+];
+
+const stats = [
+  { label: "Years in Business", value: "15+" },
+  { label: "Properties Sold", value: "500+" },
+  { label: "Happy Clients", value: "750+" },
+  { label: "Cities Served", value: "12" }
+];
+---
+
+<Layout title="About Us">
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 bg-primary-800 text-white">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="max-w-3xl" data-aos="fade-up">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">About LuxeEstates Realty</h1>
+        <p class="text-lg text-primary-100 mb-8 max-w-2xl">
+          We're a team of dedicated real estate professionals committed to helping clients find their perfect properties and make informed real estate decisions.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Our Story -->
+  <section class="py-20">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+          <img 
+            src="https://images.pexels.com/photos/5816288/pexels-photo-5816288.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+            alt="The LuxeEstates Realty team" 
+            class="w-full h-auto rounded-lg shadow-lg"
+          />
+        </div>
+        
+        <div data-aos="fade-left">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
+          
+          <p class="text-neutral-700 mb-6">
+            Founded in 2010, LuxeEstates Realty began with a simple vision: to transform the real estate experience from a transaction into a relationship built on trust, expertise, and personalized service.
+          </p>
+          
+          <p class="text-neutral-700 mb-6">
+            Our founder, David Chen, identified a gap in the luxury real estate market – clients needed more than just an agent; they needed a trusted advisor who understood their lifestyle aspirations and could guide them to properties that truly felt like home.
+          </p>
+          
+          <p class="text-neutral-700 mb-6">
+            Over the years, we've grown from a small team of passionate experts to a full-service real estate company, while maintaining our commitment to personalized service and market expertise. Our growth has been organic, built on client referrals and a reputation for exceptional results.
+          </p>
+          
+          <p class="text-neutral-700">
+            Today, LuxeEstates Realty is recognized as a leader in luxury and premium property services, with a portfolio spanning urban penthouses, beachfront estates, mountain retreats, and historic properties.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Our Values -->
+  <section class="py-20 bg-neutral-50">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Our Values</h2>
+        <p class="text-neutral-600 text-lg">
+          At LuxeEstates, we're guided by core principles that shape every aspect of our business and client relationships.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {values.map((value, index) => (
+          <div class="bg-white p-8 rounded-lg shadow-sm text-center" data-aos="fade-up" data-aos-delay={100 * index}>
+            <div class="w-16 h-16 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
+              {value.icon === 'star' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                </svg>
+              )}
+              {value.icon === 'shield' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              )}
+              {value.icon === 'academic-cap' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                  <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                </svg>
+              )}
+              {value.icon === 'heart' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              )}
+            </div>
+            
+            <h3 class="text-xl font-bold mb-4">{value.title}</h3>
+            <p class="text-neutral-600">{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Stats -->
+  <section class="py-16 bg-primary-800 text-white">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        {stats.map((stat, index) => (
+          <div data-aos="fade-up" data-aos-delay={100 * index}>
+            <div class="text-4xl font-bold mb-2">{stat.value}</div>
+            <div class="text-primary-200">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Our Team -->
+  <section class="py-20" id="team">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Meet Our Team</h2>
+        <p class="text-neutral-600 text-lg">
+          Our team of experienced professionals is dedicated to providing exceptional service and expertise.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {team.map((member, index) => (
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay={100 * index}>
+            <img src={member.image} alt={member.name} class="w-full h-80 object-cover" />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-1">{member.name}</h3>
+              <p class="text-primary-600 mb-4">{member.position}</p>
+              <p class="text-neutral-600">{member.bio}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials -->
+  <section class="py-20 bg-neutral-50" id="testimonials">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">What Our Clients Say</h2>
+        <p class="text-neutral-600 text-lg">
+          We're proud of the relationships we build and the trust our clients place in us.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-lg shadow-sm" data-aos="fade-up">
+          <div class="flex items-center mb-6">
+            <div class="text-primary-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+            </div>
+          </div>
+          
+          <p class="text-neutral-700 mb-6">
+            "The team at LuxeEstates exceeded every expectation. Their market knowledge helped us find our dream home in a competitive neighborhood, and their negotiation skills saved us thousands."
+          </p>
+          
+          <div class="flex items-center">
+            <img src="https://images.pexels.com/photos/761977/pexels-photo-761977.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Client" class="w-12 h-12 rounded-full object-cover mr-4" />
+            <div>
+              <div class="font-semibold">Jennifer & Alex Thompson</div>
+              <div class="text-sm text-neutral-500">Homebuyers in Los Angeles</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center mb-6">
+            <div class="text-primary-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+            </div>
+          </div>
+          
+          <p class="text-neutral-700 mb-6">
+            "Selling my family home of 30 years was emotional, but the LuxeEstates team handled everything with such care and respect. Their marketing strategy attracted multiple offers, and we sold above asking price."
+          </p>
+          
+          <div class="flex items-center">
+            <img src="https://images.pexels.com/photos/2269872/pexels-photo-2269872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Client" class="w-12 h-12 rounded-full object-cover mr-4" />
+            <div>
+              <div class="font-semibold">Robert Garcia</div>
+              <div class="text-sm text-neutral-500">Property Seller</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center mb-6">
+            <div class="text-primary-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+            </div>
+          </div>
+          
+          <p class="text-neutral-700 mb-6">
+            "As a real estate investor, I've worked with many agents, but LuxeEstates stands out with their market insights and attention to detail. They've helped me build a profitable portfolio of luxury rental properties."
+          </p>
+          
+          <div class="flex items-center">
+            <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Client" class="w-12 h-12 rounded-full object-cover mr-4" />
+            <div>
+              <div class="font-semibold">Michael Chen</div>
+              <div class="text-sm text-neutral-500">Real Estate Investor</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Call To Action -->
+  <section class="py-20 bg-primary-700 text-white">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Real Estate Journey?</h2>
+        <p class="text-lg text-primary-100 mb-8 max-w-2xl mx-auto">
+          Whether you're looking to buy, sell, or invest, our team is here to guide you every step of the way.
+        </p>
+        
+        <a href="/contact" class="inline-block px-8 py-3 bg-white text-primary-700 hover:bg-neutral-100 rounded-md font-medium transition-colors">
+          Contact Us Today
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

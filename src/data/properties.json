@@ -1,0 +1,44 @@
+{
+  "properties": [
+    {
+      "id": "luxury-beachfront-villa",
+      "title": "Luxury Beachfront Villa",
+      "price": 3250000,
+      "address": "123 Coastal Drive, Malibu, CA 90265",
+      "bedrooms": 5,
+      "bathrooms": 4.5,
+      "area": 4200,
+      "type": "Villa",
+      "description": "A stunning beachfront property with panoramic ocean views, private beach access, and luxurious finishes throughout. Features include a chef's kitchen, home theater, infinity pool, and spacious outdoor entertaining areas.",
+      "features": [
+        "Private Beach Access",
+        "Infinity Pool",
+        "Home Theater",
+        "Chef's Kitchen",
+        "Wine Cellar",
+        "4-Car Garage",
+        "Smart Home Technology",
+        "Outdoor Kitchen"
+      ],
+      "image": "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "images": [
+        "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/1669799/pexels-photo-1669799.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/210265/pexels-photo-210265.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/2089698/pexels-photo-2089698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
+      "featured": true,
+      "location": {
+        "latitude": 34.025921,
+        "longitude": -118.779838
+      }
+    }
+  ],
+  "featuredProperties": [
+    "luxury-beachfront-villa",
+    "modern-downtown-penthouse",
+    "mediterranean-estate",
+    "contemporary-lakefront-home"
+  ]
+}

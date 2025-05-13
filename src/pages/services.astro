@@ -1,0 +1,211 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    id: "buying",
+    title: "Buying Services",
+    description: "Our comprehensive buying services help you find and secure your dream property with confidence.",
+    image: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    items: [
+      "Personalized property searches tailored to your specific needs and preferences",
+      "Expert market analysis and valuation to ensure you pay a fair price",
+      "Private viewings of potential properties with detailed insights",
+      "Skilled negotiation to secure the best possible terms",
+      "Thorough due diligence process and property inspections",
+      "Guidance through the entire closing process",
+      "Post-purchase support and recommendations"
+    ]
+  },
+  {
+    id: "selling",
+    title: "Selling Services",
+    description: "Maximize your property's value and achieve a successful sale with our proven selling strategies.",
+    image: "https://images.pexels.com/photos/1170412/pexels-photo-1170412.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    items: [
+      "Comprehensive market analysis and competitive pricing strategy",
+      "Professional photography, videography, and virtual tours",
+      "Custom marketing plans tailored to your property's unique features",
+      "Targeted advertising to qualified buyers locally and internationally",
+      "Expert staging recommendations to showcase your property's potential",
+      "Skillful negotiation to maximize your return",
+      "Streamlined closing process and documentation management"
+    ]
+  },
+  {
+    id: "renting",
+    title: "Rental Services",
+    description: "Whether you're looking to rent a property or need help managing your rental investments, we provide comprehensive rental services.",
+    image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    items: [
+      "Extensive database of high-quality rental properties",
+      "Tailored searches based on your lifestyle and requirements",
+      "Lease negotiation and review to protect your interests",
+      "Property management services for landlords",
+      "Tenant screening and selection process",
+      "Regular property inspections and maintenance coordination",
+      "Rent collection and financial reporting"
+    ]
+  },
+  {
+    id: "investing",
+    title: "Investment Services",
+    description: "Build a profitable real estate portfolio with our expert investment guidance and market insights.",
+    image: "https://images.pexels.com/photos/6770610/pexels-photo-6770610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    items: [
+      "Investment strategy development based on your financial goals",
+      "Market trend analysis and opportunity identification",
+      "Return on investment projections and financial modeling",
+      "Due diligence on potential investment properties",
+      "Portfolio diversification recommendations",
+      "Property improvement guidance to increase value",
+      "Ongoing portfolio performance analysis"
+    ]
+  }
+];
+
+const faqs = [
+  {
+    question: "What areas do you serve?",
+    answer: "We primarily serve major metropolitan areas including Los Angeles, New York, Miami, and surrounding regions. However, through our network of partners, we can assist with properties nationwide and even internationally."
+  },
+  {
+    question: "How long does the buying process typically take?",
+    answer: "The buying process varies depending on several factors including property type, financing, and market conditions. On average, from initial search to closing, the process takes 60-90 days, but we can work with expedited timelines when necessary."
+  },
+  {
+    question: "What makes LuxeEstates different from other real estate agencies?",
+    answer: "Our combination of market expertise, personalized service, and commitment to client satisfaction sets us apart. We limit our client portfolio to ensure each client receives dedicated attention, and our team's specialized knowledge of luxury markets gives our clients a competitive edge."
+  },
+  {
+    question: "Do you work with first-time homebuyers?",
+    answer: "Absolutely! We provide additional guidance and education for first-time buyers, ensuring they understand each step of the process and feel confident in their decisions."
+  },
+  {
+    question: "What types of properties do you specialize in?",
+    answer: "We specialize in luxury residential properties, including single-family homes, condominiums, townhouses, and estates. We also have dedicated teams for commercial properties and investment opportunities."
+  },
+  {
+    question: "How do you determine the right selling price for my property?",
+    answer: "We conduct a comprehensive market analysis that considers recent comparable sales, current market conditions, your property's unique features and improvements, and buyer demand in your area. This data-driven approach ensures optimal pricing strategy."
+  }
+];
+---
+
+<Layout title="Our Services">
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 bg-primary-800 text-white">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="max-w-3xl" data-aos="fade-up">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
+        <p class="text-lg text-primary-100 mb-8 max-w-2xl">
+          We offer comprehensive real estate services tailored to your unique needs, whether you're buying, selling, renting, or investing.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Services Overview -->
+  <section class="py-20">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Comprehensive Real Estate Solutions</h2>
+        <p class="text-neutral-600 text-lg">
+          From finding your dream home to maximizing your investment returns, our team provides expert guidance at every step.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {services.map((service, index) => (
+          <a href={`#${service.id}`} class="group" data-aos="fade-up" data-aos-delay={100 * index}>
+            <div class="bg-white rounded-lg overflow-hidden shadow-sm transition-transform duration-300 group-hover:-translate-y-1">
+              <div class="h-48 overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 group-hover:text-primary-600 transition-colors">{service.title}</h3>
+                <p class="text-neutral-600">{service.description}</p>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Detailed Services Sections -->
+  {services.map((service) => (
+    <section id={service.id} class="py-20 odd:bg-neutral-50">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div data-aos={service.id === "selling" || service.id === "investing" ? "fade-right" : "fade-left"} class={service.id === "selling" || service.id === "investing" ? "order-1 lg:order-1" : "order-1 lg:order-2"}>
+            <img 
+              src={service.image} 
+              alt={service.title} 
+              class="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+          
+          <div data-aos={service.id === "selling" || service.id === "investing" ? "fade-left" : "fade-right"} class={service.id === "selling" || service.id === "investing" ? "order-2 lg:order-2" : "order-2 lg:order-1"}>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">{service.title}</h2>
+            <p class="text-neutral-700 mb-8">{service.description}</p>
+            
+            <ul class="space-y-4">
+              {service.items.map((item) => (
+                <li class="flex items-start">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-500 mr-3 mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="text-neutral-700">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+  
+  <!-- FAQs -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Frequently Asked Questions</h2>
+        <p class="text-neutral-600 text-lg">
+          Find answers to common questions about our services and real estate process.
+        </p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto" data-aos="fade-up">
+        <div class="space-y-6">
+          {faqs.map((faq, index) => (
+            <div class="bg-neutral-50 rounded-lg p-6" data-aos="fade-up" data-aos-delay={50 * index}>
+              <h3 class="text-xl font-bold mb-3">{faq.question}</h3>
+              <p class="text-neutral-700">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Call To Action -->
+  <section class="py-20 bg-primary-700 text-white">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
+        <p class="text-lg text-primary-100 mb-8 max-w-2xl mx-auto">
+          Contact us today to discuss your real estate needs and discover how our services can benefit you.
+        </p>
+        
+        <a href="/contact" class="inline-block px-8 py-3 bg-white text-primary-700 hover:bg-neutral-100 rounded-md font-medium transition-colors">
+          Contact Us Today
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

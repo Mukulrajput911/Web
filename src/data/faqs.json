@@ -1,0 +1,17 @@
+{
+  "categories": [
+    {
+      "name": "Buying",
+      "questions": [
+        {
+          "question": "What credit score do I need to buy a home?",
+          "answer": "While requirements vary by lender and loan type, generally a minimum credit score of 620 is needed for conventional loans. FHA loans may accept scores as low as 580. However, higher credit scores typically result in better interest rates and loan terms."
+        },
+        {
+          "question": "How much down payment do I need?",
+          "answer": "Down payment requirements vary by loan type and property. Conventional loans typically require 5-20%, while FHA loans may accept as little as 3.5%. Luxury properties often require larger down payments, typically 20% or more."
+        }
+      ]
+    }
+  ]
+}

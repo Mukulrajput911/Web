@@ -1,0 +1,14 @@
+{
+  "guides": [
+    {
+      "id": "first-time-buyer-guide",
+      "title": "Complete Guide for First-Time Home Buyers",
+      "excerpt": "Everything you need to know about purchasing your first home, from financing to closing.",
+      "content": "Buying your first home is an exciting milestone, but it can also be overwhelming. This comprehensive guide will walk you through every step of the process.\n\n1. Preparing for Home Ownership\n- Assessing your financial readiness\n- Understanding mortgage requirements\n- Saving for a down payment\n- Improving your credit score\n\n2. The Home Search Process\n- Determining your must-haves vs. nice-to-haves\n- Working with a real estate agent\n- Viewing properties effectively\n- Making an offer\n\n3. The Purchase Process\n- Home inspection and appraisal\n- Understanding closing costs\n- Final walkthrough\n- Closing day procedures",
+      "author": "David Chen",
+      "category": "Buying",
+      "image": "https://images.pexels.com/photos/7578942/pexels-photo-7578942.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "tags": ["First-Time Buyers", "Home Buying", "Mortgages"]
+    }
+  ]
+}
