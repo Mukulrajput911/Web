@@ -1,0 +1,1 @@
+import{S as e}from"./swiper-bundle.Dj1gX9l9.js";document.addEventListener("DOMContentLoaded",function(){new e("#testimonials-slider",{slidesPerView:1,spaceBetween:30,pagination:{el:".swiper-pagination",clickable:!0},breakpoints:{768:{slidesPerView:2},1024:{slidesPerView:3}}})});

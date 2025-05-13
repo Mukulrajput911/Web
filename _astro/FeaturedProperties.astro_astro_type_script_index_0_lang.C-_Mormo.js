@@ -1,0 +1,1 @@
+import{S as e}from"./swiper-bundle.Dj1gX9l9.js";document.addEventListener("DOMContentLoaded",function(){new e("#featured-properties-slider",{slidesPerView:1,spaceBetween:20,pagination:{el:".swiper-pagination",clickable:!0},navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"},breakpoints:{640:{slidesPerView:2},1024:{slidesPerView:3}}})});
